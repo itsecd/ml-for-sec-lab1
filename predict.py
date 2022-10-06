@@ -17,7 +17,7 @@ def classify(model: str, data: str):
     print('Файл с данными считан успешно. Перехожу к загрузке модели.')
     
     model = pickle.load(open(model, 'rb'))
-    print('Модель загружена. Перехожу к предсказаниями.')
+    print('Модель загружена. Перехожу к предсказаниям.')
     
     predict = np.array(model.predict(data))
     print('Предсказания готовы.')
