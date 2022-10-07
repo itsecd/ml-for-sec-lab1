@@ -13,13 +13,13 @@ def classify(model: str, data: str):
         raise FileNotFoundError('Файл с данными отсутствует.')
         
         
-    data = pd.read_csv(data)
+    df = pd.read_csv(data)
     print('Файл с данными считан успешно. Перехожу к загрузке модели.')
     
     model = pickle.load(open(model, 'rb'))
     print('Модель загружена. Перехожу к предсказаниям.')
     
-    predict = np.array(model.predict(data))
+    predict = np.array(model.predict(df))
     print('Предсказания готовы.')
     
     return predict
