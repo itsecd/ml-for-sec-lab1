@@ -99,13 +99,6 @@ class DataNormalizer:
         ], axis=1)
     
     def save(self, path: str):
-        params = {
-            DataNormalizer.P_PCA: self.pca,
-            DataNormalizer.P_MEAN: self.mean,
-            DataNormalizer.P_STD: self.std,
-            DataNormalizer.P_EXP_QUANTILE: self.exp_quantile_val
-        }
-        
         with open(path, 'wb') as f:
             f.write(dumps(self))
     
