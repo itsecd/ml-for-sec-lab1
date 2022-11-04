@@ -9,7 +9,7 @@ from loguru import logger
 
 
 def classify(model: str, data: str):
-    """function to run predictions."""
+    """function to run predictions"""
     if not os.path.exists(model):
         raise FileNotFoundError('No file with the model.')
 
