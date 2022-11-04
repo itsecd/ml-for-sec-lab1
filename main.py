@@ -40,4 +40,4 @@ if __name__ == '__main__':
     predict = classify(args.model, args.data)
     pd.DataFrame(
         data=predict, columns=['is_bot']).to_csv(args.save, index=False)
-    print(f'the predictions were saved to {args.save}')
+    print(f'The predictions were saved to a file: {args.save}.')
