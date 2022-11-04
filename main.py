@@ -38,6 +38,6 @@ if __name__ == '__main__':
         print('is_bot')
         for pred in predict:
             print(pred)
-    else:
-        pd.DataFrame(data=predict, columns=['is_bot']).to_csv('предсказания.csv', index=False)
-        print(f'Предсказания сохранены в файл предсказания.csv') 
+    elif choice == 2:
+        pd.DataFrame(data=predict, columns=['is_bot']).to_csv('result.csv', index=False)
+        print(f'Предсказания сохранены в файл result.csv')
