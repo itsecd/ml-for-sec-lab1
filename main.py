@@ -1,7 +1,7 @@
+"""prediction module."""
 import os
 import pickle
-import sys
-from datetime import datetime
+from argparse import ArgumentParser
 
 import numpy as np
 import pandas as pd
@@ -9,7 +9,7 @@ from loguru import logger
 
 
 def classify(model: str, data: str):
-    """function to run predictions"""
+    """function to predict."""
     if not os.path.exists(model):
         raise FileNotFoundError('No file with the model.')
 
@@ -24,26 +24,20 @@ def classify(model: str, data: str):
     model = pickle.load(open(model, 'rb'))
     logger.debug(f'The model: {model} is loaded. Moving on to predictions.')
 
-    predict = np.array(model.predict(df))
+    predictions = np.array(model.predict(df))  # type: ignore
     logger.debug('The predictions are ready.')
 
-    return predict
+    return predictions
 
 
 if __name__ == '__main__':
-    model = input('Enter the path to the file with the model: ')
-    data = input('Enter the path to the data file: ')
-
-    predict = classify(model, data)
-    print('Do you want to save the result to Excel?\n 1 - No\n 2 - Yes')
-    choice = int(input('Saving?: '))
-
-    if choice == 1:
-        print('Output predict in the console: ')
-        for pred in predict:
-            print(f'is_bot: {pred}')
-    else:
-        now = datetime.now().strftime('%d-%m-%Y-%H-%M-%S')
-        pd.DataFrame(data=predict, columns=['is_bot']).to_csv(
-            f'results/predictions_{now}.csv', index=False)
-        print(f'the predictions were saved to the folder "results".')
+    # Example: python main.py -m "models/xgboost_model.pkl" -d "data/features_train.csv" -s "results/predictions.csv"
+    parser = ArgumentParser()
+    parser.add_argument('-m', '--model', required=True)
+    parser.add_argument('-d', '--data', required=True)
+    parser.add_argument('-s', '--save', required=True)
+    args = parser.parse_args()
+    predict = classify(args.model, args.data)
+    pd.DataFrame(
+        data=predict, columns=['is_bot']).to_csv(args.save, index=False)
+    print(f'the predictions were saved to {args.save}')
