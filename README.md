@@ -3,7 +3,7 @@
 
 [Samara University](https://ssau.ru/) <br/>
 MLIS-2022
-## Лабораторная работа по курсу "Machine learning for information security tasks". <br/>
+## Лабораторная работа по курсу: "Machine learning for information security tasks". <br/>
 Машинное обучение для задач информационной безопасности <br/>
 <br/>
 ### Выполнено студентами:<br/>
@@ -13,18 +13,17 @@ MLIS-2022
 #### Студент: Griaznov Ilia <br/>
 #### Группа: "6231-010402D"
 
+<br/>
+
 ### Средства, используемые для разработки приложения: <br/>
 > Python 3: https://www.python.org/; <br/>
 > Jupyter-notebook; <br/>
-<br/>
 > Библиотеки: <br/>
 > numpy; <br/>
 > pandas; <br/>
 > sklearn; <br/>
 > matplotlib; <br/>
 <br/>
-
-
 
 
 ![logo](https://ibagroup.kz/wp-content/uploads/2019/09/security_tizer_wwwiba_1300-357_v-01.jpg)
