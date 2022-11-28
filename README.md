@@ -14,6 +14,7 @@ MLIS-2022
 #### Группа: "6231-010402D"
 
 <br/>
+
 ### Средства, используемые для разработки приложения: <br/>
 > Python 3: https://www.python.org/; <br/>
 > Jupyter-notebook; <br/>
