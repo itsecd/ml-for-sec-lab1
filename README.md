@@ -1,4 +1,7 @@
+
 # Машинное обучение для задач информационной безопасности. Лаба 1. Порядок выполнения
+
+## Коршиков Владислав Игоревич 6233-010402D
 
 ## Схема сдачи
 
@@ -17,3 +20,4 @@
 3. Желательно почаще делать коммиты. В идеале - как только решена некоторая промежуточная задача.
 4. Коммиты *должны* иметь вменяемые описания.
 5. Рекомендуется, чтобы ваш репозиторий содержал файлы [.gitignore](https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files) (для них имеется набор [шаблонов](https://github.com/github/gitignore)) и [requirements.txt](https://www.jetbrains.com/help/pycharm/managing-dependencies.html#create-requirements)
+
