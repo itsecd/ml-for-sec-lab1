@@ -1,0 +1,14 @@
+.DS_Store
+
+.venv
+
+data/
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+*.pyc
+*.pyo
+
+.idea/
+
+catboost_info
