@@ -40,7 +40,7 @@ def classify(model: str, data: str):
 
 
 if __name__ == '__main__':
-    # Example: python main.py -m "models/xgboost_model.pkl" -d "data/features_train.csv" -s "results/predictions.csv"
+    # Example: python main.py -m "models/LightGBM.pkl" -d "data/features_train.csv" -s "results/pred.csv"
     parser = ArgumentParser()
     parser.add_argument('-m', '--model', required=True)
     parser.add_argument('-d', '--data', required=True)
