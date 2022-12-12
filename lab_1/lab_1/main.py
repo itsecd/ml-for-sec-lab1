@@ -33,14 +33,16 @@ def classify(model: str, data: str):
     model = pickle.load(open(model, 'rb'))
     logger.debug(f'The model: {model} is loaded. Moving on to predictions.')
 
-    predictions = np.array(model.predict(df))  # type: ignore
+    predictions = model.predict(df)  # type: ignore
+    with open('test.txt', 'w') as f:
+        f.write(str(predictions))
     logger.debug('The predictions are ready.')
 
     return predictions
 
 
 if __name__ == '__main__':
-    # Example: python main.py -m "models/LightGBM.pkl" -d "data/features_train.csv" -s "results/pred.csv"
+    # Example: python main.py -m "models/xgb.pkl" -d "data/features_train.csv" -s "results/pred.csv"
     parser = ArgumentParser()
     parser.add_argument('-m', '--model', required=True)
     parser.add_argument('-d', '--data', required=True)
